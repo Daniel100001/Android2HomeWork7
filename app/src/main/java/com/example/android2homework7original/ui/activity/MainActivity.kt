@@ -58,9 +58,9 @@ class MainActivity : AppCompatActivity() {
                         if (name != null) {
                             list.add(name)
                         }
-                    }
 
-                    textAdapter.setList(list)
+                        textAdapter.setList(list)
+                    }
                 }
         }
     }
