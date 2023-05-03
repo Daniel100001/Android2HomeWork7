@@ -8,13 +8,12 @@ import com.example.android2homework7original.models.TextModel
 
 class TextAdapter : RecyclerView.Adapter<TextAdapter.TextViewHolder>() {
 
-    private var list: List<TextModel> = ArrayList()
+    private var list: ArrayList<TextModel> = ArrayList()
 
-    fun setList(list: List<TextModel>) {
+    fun setList(list: ArrayList<TextModel>) {
         this.list = list
         notifyDataSetChanged()
     }
-
 
     class TextViewHolder(private val binding: ItemTextBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -40,5 +39,4 @@ class TextAdapter : RecyclerView.Adapter<TextAdapter.TextViewHolder>() {
     override fun onBindViewHolder(holder: TextViewHolder, position: Int) {
         holder.onBind(list[position])
     }
-
 }

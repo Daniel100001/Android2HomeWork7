@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private val db = Firebase.firestore
     private val list: ArrayList<TextModel> = ArrayList()
     private val textAdapter = TextAdapter()
-    private val collectionRef = db.collection("user")
+    private val collectionUser = db.collection("user")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,22 +27,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setUpListener()
         initialize()
-        setData()
     }
-
-    private fun setData() {
-        collectionRef.get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    list.add(document.data["name"] as TextModel)
-                }
-                TextAdapter.setList(list)
-            }
-            .addOnFailureListener { exception ->
-                Log.d(TAG, "Error getting documents: ", exception)
-            }
-    }
-
 
     private fun initialize() {
         binding.recyclerViewText.apply {
@@ -61,6 +46,22 @@ class MainActivity : AppCompatActivity() {
             db.collection("user").add(user).addOnSuccessListener {
                 Toast.makeText(this, "add items", Toast.LENGTH_SHORT).show()
             }
+                collectionUser.addSnapshotListener { snapshot, error ->
+                    if (error != null) {
+                        Log.d(TAG, "Error getting documents: ", error)
+                        return@addSnapshotListener
+                    }
+
+                    val list = ArrayList<TextModel>()
+                    for (document in snapshot?.documents ?: emptyList()) {
+                        val name = document.getString("name")
+                        if (name != null) {
+                            list.add(name)
+                        }
+                    }
+
+                    textAdapter.setList(list)
+                }
         }
     }
 }
