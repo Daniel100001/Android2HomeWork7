@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                         return@addSnapshotListener
                     }
 
-                    val list = ArrayList<TextModel>()
+                    val list = ArrayList<String>()
                     for (document in snapshot?.documents ?: emptyList()) {
                         val name = document.getString("name")
                         if (name != null) {

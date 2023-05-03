@@ -4,13 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android2homework7original.databinding.ItemTextBinding
-import com.example.android2homework7original.models.TextModel
 
 class TextAdapter : RecyclerView.Adapter<TextAdapter.TextViewHolder>() {
 
-    private var list: ArrayList<TextModel> = ArrayList()
+    private var list: ArrayList<String> = ArrayList()
 
-    fun setList(list: ArrayList<TextModel>) {
+    fun setList(list: ArrayList<String>) {
         this.list = list
         notifyDataSetChanged()
     }
@@ -18,8 +17,8 @@ class TextAdapter : RecyclerView.Adapter<TextAdapter.TextViewHolder>() {
     class TextViewHolder(private val binding: ItemTextBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(textModel: TextModel) {
-            binding.nameItem.text = textModel.name
+        fun onBind(textModel: String) {
+            binding.nameItem.text = textModel
         }
     }
 
