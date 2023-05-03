@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "427261915045",
+    "project_id": "android2homework7-b32e9",
+    "storage_bucket": "android2homework7-b32e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427261915045:android:55c0214df14949b6b8c24c",
+        "android_client_info": {
+          "package_name": "com.example.android2homework7original"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427261915045-jeum4opri421vgta6q2gmvqgo28gmepe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android2homework7original",
+            "certificate_hash": "7d1b0ee4bb023dd4657e7dfa1b9f5fb95dc826d5"
+          }
+        },
+        {
+          "client_id": "427261915045-qm6ut2tgal00sgmsujg6lasjumb7f3kh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFtotrLikc5SINckcinFHH0p0qiKDLEHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427261915045-qm6ut2tgal00sgmsujg6lasjumb7f3kh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
